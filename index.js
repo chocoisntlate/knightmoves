@@ -4,7 +4,17 @@ function knightMoves(start, destination) {
 
     }
 
-    let queue = []
+    let queue = [[start]]
+    
+    while (queue.length !== 0) {
+        const currentPath = queue.shift()
+        const currentPoint =  currentPath[currentPath.length-1]
+        
+
+        for (let endpoint of getPossibleMoves(currentPoint)) {
+            queue.push(currentPath.push(endpoint))
+        }
+    }
 
 }
 
