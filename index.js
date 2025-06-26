@@ -13,7 +13,7 @@ function knightMoves(start, destination) {
         const currentPoint =  currentPath[currentPath.length-1] // [3,3]
         
         if (currentPoint[0] === destination[0] && currentPoint[1] === destination[1]) {
-            console.log("You made it in some number of moves");
+            console.log(`You made it in ${currentPath.length - 1} moves. Here is your path:`);
             console.log(currentPath);
             return
         }
@@ -36,4 +36,4 @@ function getPossibleMoves(start) {
     return array.filter((element) => element[0]>=0 && element[0]<=7 && element[1]>=0 && element[1]<=7 )
 }
 
-knightMoves([3,3],[4,3])
+knightMoves([0,0],[7,7])
